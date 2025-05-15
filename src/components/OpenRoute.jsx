@@ -7,7 +7,7 @@ const OpenRoute = ({children}) => {
     if(token==null){
         return children
     }else {
-        return <Navigate to="/"  />
+        return <Navigate to="/home"  />
     }
 }
 
