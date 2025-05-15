@@ -23,14 +23,12 @@ import Select from "../components/form/Select";
 
     const [form, setForm] = useState({
         storageCapacity: "",
-        material: "",
         dimensions: "",
         color: "",
         finishType: "",
         sizeInClothes: "",
         sizeInEatables: "",
         flavor: "",
-        packaging: "",
         volume: "",
         weight: "",
         stock_quantity: "",
@@ -40,14 +38,6 @@ import Select from "../components/form/Select";
     });
 
     const [errors, setErrors] = useState({});
-    const options=[
-        { value: "S", label: "S" },
-        { value: "M", label: "M" },
-        { value: "L", label: "L" },
-        { value: "XL", label: "XL" },
-        { value: "XXL", label: "XXL" },
-        { value: "XXXL", label: "XXXL" },
-    ]
 
     useEffect(() => {
         if (isEdit && variantId) {
@@ -112,6 +102,7 @@ import Select from "../components/form/Select";
         discountPercentage: form.discountPercentage,
         images: form.images,
         };
+        console.log("variantData",variantData)
 
         const formData = new FormData();
         const existingImageURLs = [];
@@ -164,15 +155,7 @@ import Select from "../components/form/Select";
             ].map(({ label, name, required }) => (
             <div key={name}>
                 <Label htmlFor={name}>{label}</Label>
-                {name === "sizeInClothes" ? (
-                <Select
-                    options={options}
-                    placeholder="select a size"
-                    defaultValue={form.sizeInClothes}
-                    value={form[name]}
-                    onChange={(value) => setForm({ ...form, sizeInClothes: value })}
-                />
-                ) : (
+                {(
                 <Input
                     id={name}
                     name={name}
