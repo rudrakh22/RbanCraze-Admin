@@ -16,6 +16,7 @@ import AddVariant from './Pages/AddVariant';
 
 function App() {
   const location=useLocation();
+  console.log("Hello")
   return (
     <Routes>
       <Route path='/' element={
