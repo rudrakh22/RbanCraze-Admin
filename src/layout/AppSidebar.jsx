@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom"; 
 import { AiFillProduct } from "react-icons/ai";
+import image1 from "../assets/no_padding.png"
 
 // Assume these icons are imported from an icon library
 import {
@@ -280,14 +281,14 @@ const AppSidebar = () => {
             <>
               <img
                 className="dark:hidden"
-                src="/images/logo/logo.svg"
+                src={image1}
                 alt="Logo"
                 width={150}
                 height={40}
               />
               <img
-                className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
+                className="hidden dark:block h-15 w-15 rounded-full"
+                src={image1}
                 alt="Logo"
                 width={150}
                 height={40}
@@ -295,8 +296,7 @@ const AppSidebar = () => {
             </>
           ) : (
             <img
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
+              src={image1}
               width={32}
               height={32}
             />
